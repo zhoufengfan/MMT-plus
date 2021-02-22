@@ -12,6 +12,3 @@ RUN git clone https://github.com/yxgeee/MMT-plus.git
 WORKDIR /root/MMT-plus
 RUN python setup.py develop
 WORKDIR /root
-RUN git clone https://github.com/NVIDIA/apex.git
-WORKDIR /root/apex
-RUN python setup.py install --cuda_ext --cpp_ext
