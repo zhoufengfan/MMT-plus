@@ -5,8 +5,5 @@ RUN apt-get update -qq && \
     apt-get install -y git vim wget curl libgtk2.0-dev
 
 RUN /bin/bash -c 'source $HOME/.bashrc'
-RUN conda install -c pytorch faiss-gpu
-WORKDIR /root
-RUN git clone https://github.com/yxgeee/MMT-plus.git
-WORKDIR /root/MMT-plus
-RUN python setup.py develop
+COPY requirements.txt /workspace
+RUN pip --no-cache-dir install -r /workspace/requirements.txt
