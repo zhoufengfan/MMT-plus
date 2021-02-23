@@ -8,7 +8,7 @@ RUN /bin/bash -c 'source $HOME/.bashrc'
 RUN conda create -n mmt-plus python=3.8
 RUN conda init bash
 RUN /bin/bash -c 'source $HOME/.bashrc'
-RUN conda activate mmt-plus
+RUN /bin/bash -c 'source activate mmt-plus'
 RUN conda install -c pytorch faiss-gpu
 WORKDIR /root
 RUN git clone https://github.com/yxgeee/MMT-plus.git
